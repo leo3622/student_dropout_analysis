@@ -10,7 +10,7 @@ This project aims to analyze factors influencing student dropout rates in an edu
 ## Data Source
 - **Source**: Dataset is the result of a survey conducted by the institution with 40000+ students from various backgrounds in Europe countries.
 
-- **Key Features Uses**:
+- **Key Features Used**:
     - `Gender`: indicating the gender of the student (Male/Female).
     - `Student's Performance`: indicating the student's academic performance (e.g., GPA).
     - `Class time`: indicating the student's class time (e.g., Morning/Evening).
