@@ -29,18 +29,23 @@ This project aims to analyze factors influencing student dropout rates in an edu
 1. **Student Distribution by Nationality**
 
     <img src="pictures/student_distribution_by_nationality.png" alt="Student Nationality Distribution" width="600">
-
+    
+    *Portuguese students make up the majority, followed by English and Italian students, showing a strong concentration of specific nationalities.*
 2. **Average Performance Score by Output**
     
     <img src="pictures/avg_performance_score_by_output.png" alt="Average Performance Score" width="600">
-
+   
+    *Graduates have the highest average performance score, while dropouts score significantly lower.*
 3. **Student Output by Class Time**
     
     <img src="pictures/student_output_by_class_time.png" alt="Student Output by Class Time" width="600">
-
+    
+    *Daytime classes have more students, but evening classes have a relatively higher dropout proportion.*
 4. **Average Dropout by Gender**
     
     <img src="pictures/avg_dropout_by_gender.png" alt="Average Dropout by Gender" width="600">
+   
+    *Male students have a higher average dropout rate compared to female students.*
 
 ## Conclusion
 This analysis provides valuable insights into the factors contributing to student dropout rates. By understanding these factors, educational institutions can implement targeted strategies to reduce dropout rates and improve student retention. The findings highlight the importance of addressing gender disparities, supporting at-risk students, and considering the impact of class schedules on student success. For further planning, we will conduct a more detailed analysis on the other factors that may influence dropout rates, such as socioeconomic status, family background, and mental health support then develop a machine learning model to early predict dropout risk based on these factors thereby allowing for proactive interventions.
