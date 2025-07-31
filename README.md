@@ -8,12 +8,13 @@
 This project aims to analyze factors influencing student dropout rates in an educational institution. With the goal to clarify the factors that people usually discuss about the dropout rate such as **gender, student's performance, and behavior** are actually contributing to it.
 
 ## Data Source
--**Source**: Dataset is the result of a survey conducted by the institution with 40000+ students from various backgrounds in Europe countries.
--**Key Features Uses**:
-- `Gender`: indicating the gender of the student (Male/Female).
-- `Student's Performance`: indicating the student's academic performance (e.g., GPA).
-- `Class time`: indicating the student's class time (e.g., Morning/Evening).
-- `Output`: indicating the student's status (e.g., Dropout, Enrolled, Graduate).
+- **Source**: Dataset is the result of a survey conducted by the institution with 40000+ students from various backgrounds in Europe countries.
+
+- **Key Features Uses**:
+    - `Gender`: indicating the gender of the student (Male/Female).
+    - `Student's Performance`: indicating the student's academic performance (e.g., GPA).
+    - `Class time`: indicating the student's class time (e.g., Morning/Evening).
+    - `Output`: indicating the student's status (e.g., Dropout, Enrolled, Graduate).
 
 ## Key Findings
 1. **Gender Disparity**: The results show a significant difference in dropout rates between Male and Female students. Female students tend to have a lower dropout rate compared to Male students.
