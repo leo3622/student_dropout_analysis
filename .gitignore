@@ -3,3 +3,6 @@ data/*
 
 __pycache__/
 *.pyc
+
+.env
+reports/model_report.json

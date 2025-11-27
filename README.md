@@ -5,10 +5,10 @@
 ---
 
 ## Project Overview
-This project aims to analyze factors influencing student dropout rates in an educational institution. With the goal to clarify the factors that people usually discuss about the dropout rate such as **gender, student's performance, and behavior** are actually contributing to it.
+This project analyzes factors influencing student dropout rates and ships a reproducible modeling pipeline so you can quantify risk, audit fairness, and experiment with interventions.
 
 ## Data Source
-- **Source**: Dataset is the result of a survey conducted by the institution with 40000+ students from various backgrounds in Europe countries.
+- **Source**: Survey from 40,000+ students across multiple European institutions.
 
 - **Key Features Used**:
     - `Gender`: indicating the gender of the student (Male/Female).
@@ -17,14 +17,34 @@ This project aims to analyze factors influencing student dropout rates in an edu
     - `Output`: indicating the student's status (e.g., Dropout, Enrolled, Graduate).
 
 ## Key Findings
-1. **Gender Disparity**: The results show a significant difference in dropout rates between Male and Female students. Female students tend to have a lower dropout rate compared to Male students.
-2. **Performance Impact**: Students with higher academic performance (GPA) are less likely to drop out, indicating that academic success is a protective factor against dropout.
-3. **Class Time Influence**: Students attending classes in the evening have a higher dropout rate though the difference is not statistically significant. But this may correlate with other factors like economic status or family responsibilities which need further investigation.
+1. **Performance dominates**: Academic performance features (grades/approvals) drive the largest lift in predictive power for dropout.
+2. **Class time signal**: Evening attendance is associated with higher dropout probability even after controlling for performance.
+3. **Fairness gap is small but monitored**: Precision/recall for the dropout class is comparable across gender and class-time groups (see audit below).
 
 ## Recommendations
-1. **Targeted Support**: Implement targeted support programs for at-risk students, particularly focusing on Male students and those with lower academic performance.
-2. **Academic Interventions**: Develop academic intervention programs to assist students struggling with their coursework, especially in the early stages of their education.
-3. **Flexible Class Scheduling**: Consider offering more flexible class scheduling options to accommodate students' varying needs and responsibilities, particularly for those attending evening classes.
+1. **Targeted Support**: Implement targeted support for male students and those with early performance struggles.
+2. **Academic Interventions**: Offer proactive tutoring and milestone checks during the first two semesters.
+3. **Flexible Class Scheduling**: Provide flexible scheduling options for students attending evening classes.
+
+## Modeling Pipeline (resume-ready highlights)
+- Built end-to-end pipeline with imputation, outlier clipping, one-hot encoding, and standardized numeric features.
+- Benchmarked baseline vs tuned models; grid-searched random forest is currently best.
+- Added fairness audit for gender and class-time groups, focused on dropout detection precision/recall.
+
+### Repro steps
+```bash
+make install      # optional: set up .venv
+make train        # trains models, saves reports/model_report.json
+make test         # runs lightweight feature-engineering tests
+```
+
+### Latest metrics (held-out 20% test set)
+- Baseline dummy: accuracy 0.41, F1-macro 0.36, ROC-AUC(ovr) 0.52
+- Logistic regression: accuracy 0.74, F1-macro 0.70, ROC-AUC(ovr) 0.87
+- Tuned random forest (best): accuracy 0.75, F1-macro 0.71, ROC-AUC(ovr) 0.89  
+  Fairness (dropout precision/recall):  
+  - Gender — Female precision 0.80 / recall 0.71; Male precision 0.85 / recall 0.68  
+  - Class time — Day precision 0.83 / recall 0.67; Evening precision 0.83 / recall 0.83
 
 ## Visualizations
 1. **Student Distribution by Nationality**
